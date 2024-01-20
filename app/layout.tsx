@@ -2,8 +2,14 @@ import '@/app/ui/global.css';
 import { inter } from './ui/fonts';
 import { Metadata } from 'next';
 
+// %s se reemplaza por el titulo de paginas hijas
+// si existe title, coge la plantilla
+// sino coge el default
 export const metadata: Metadata = {
-  title: 'Acme Dashboard',
+  title: {
+    template: '%s | Acme Dashboard',
+    default: 'Acme Dashboard'
+  },
   description: 'The official Next.js Course Dashboard, built with App Router.',
   metadataBase: new URL('https://next-learn-dashboard.vercel.sh'),
 };
